@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Presensi KM ITB</title>
+
+    <style>
+        body {
+            background: #f3f3f3;
+        }
+        #container {
+            text-align: center;
+            margin-top: 10%;
+        }
+        #header {
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 5em;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container" id="container">
+
+<div id="header">
+    <img src="C:\Users\Zack\Pictures\replika-logo-km-itb.png" width="100px" /> PRESENSI KM ITB
+</div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <input id="nama" class="input-lg" type="text" onChange={this.onChangeNama.bind(this)} placeholder="Nama" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-12">
+            <input id="nim" class="input-lg" type="text" onChange={this.onChangeNim.bind(this)} placeholder="NIM" />
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="row">
+                <br />
+                <input type="button" class="btn btn-success btn-lg" value="check in" onClick={this.checkin} />
+                <input type="button" class="btn btn-warning btn-lg" value="check out" onClick={this.checkout} />
+            </div>
+            <div class="row">
+                <br />
+                <button  class="btn btn-default btn-sm form-data" data-toggle='modal' data-target='#form'>View Log</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="form" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Daftar Presensi</h4>
+                </div>
+
+                <div class="modal-body">
+
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#hal1">Semua</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#hal2">Hadir</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#hal3">Pulang</a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+
+                        <div id="hal1" class="tab-pane fade in active">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Nama</th>
+                                        <th>NIM</th>
+                                        <th>Jurusan</th>
+                                        <th>Himpunan</th>
+                                        <th>Waktu Datang</th>
+                                        <th>Waktu Pulang</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Royyan Abdullah Dzakiy</td>
+                                        <td>13515123</td>
+                                        <td>Teknik Informatika</td>
+                                        <td>HMIF</td>
+                                        <td>13:00</td>
+                                        <td>15:04</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div id="hal2" class="tab-pane fade">
+
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Nama</th>
+                                        <th>NIM</th>
+                                        <th>Jurusan</th>
+                                        <th>Himpunan</th>
+                                        <th>Waktu Datang</th>
+                                        <th>Waktu Pulang</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Royyan Abdullah Dzakiy</td>
+                                        <td>13515123</td>
+                                        <td>Teknik Informatika</td>
+                                        <td>HMIF</td>
+                                        <td>13:00</td>
+                                        <td>15:04</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div id="hal3" class="tab-pane fade">
+
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Nama</th>
+                                        <th>NIM</th>
+                                        <th>Jurusan</th>
+                                        <th>Himpunan</th>
+                                        <th>Waktu Datang</th>
+                                        <th>Waktu Pulang</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Royyan Abdullah Dzakiy</td>
+                                        <td>13515123</td>
+                                        <td>Teknik Informatika</td>
+                                        <td>HMIF</td>
+                                        <td>13:00</td>
+                                        <td>15:04</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
