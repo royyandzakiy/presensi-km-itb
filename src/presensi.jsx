@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-import Presensi from './presensi';
 import './css/main.css';
 
-class Main extends Component {
+class Presensi extends Component {
     constructor(props) {
         super(props);
 
@@ -253,157 +252,34 @@ class Main extends Component {
     }
 
     render() {
-        return (
-            <div class="container" id="container">
+        return (                
+                <div>
+                <div id="presensi">
+                    <h4>Presensi: <span id="collection">{this.state.collection}</span></h4>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <input id="nama" class="input-lg" type="text" onChange={this.onChangeNama.bind(this)} placeholder="Nama" />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <input id="nim" class="input-lg" type="text" onChange={this.onChangeNim.bind(this)} placeholder="NIM" maxlength="8" />
+                        </div>
+                    </div>
 
-                <div id="header">
-                    <img src={require('./pics/replika-logo-km-itb.png')} width="100px" /> PRESENSI <span id="kmitb">KM ITB</span>
-                </div>
-
-                <div id="body">
-                
-                <Presensi />
-                
-            </div>
-
-                <div id="form" class="modal fade" role="dialog">
-                    <div class="modal-dialog modal-lg">
-
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Daftar Presensi</h4>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <br />
+                                <div class="btn-group">
+                                    <input type="button" class="btn btn-success btn-lg" value="check in" onClick={this.checkin} />
+                                    <input type="button" class="btn btn-warning btn-lg" value="check out" onClick={this.checkout} />
+                                </div>
                             </div>
-
-                            <div class="modal-body">
-
-                                <ul class="nav nav-tabs">
-                                    <li class="active">
-                                        <a data-toggle="tab" href="#hal1">Semua</a>
-                                    </li>
-                                    <li>
-                                        <a data-toggle="tab" href="#hal2">Hadir</a>
-                                    </li>
-                                    <li>
-                                        <a data-toggle="tab" href="#hal3">Pulang</a>
-                                    </li>
-                                    <li>
-                                        <a data-toggle="tab" href="#hal4">Rekap</a>
-                                    </li>
-                                </ul>
-
-                                <div class="tab-content">
-
-                                    <div id="hal1" class="tab-pane fade in active">
-                                        <collection class="collection collection-bordered collection-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th>Nama</th>
-                                                    <th>NIM</th>
-                                                    <th>Jurusan</th>
-                                                    {/* <th>Himpunan</th> */}
-                                                    <th>Waktu Datang</th>
-                                                    <th>Waktu Pulang</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Royyan Abdullah Dzakiy</td>
-                                                    <td>13515123</td>
-                                                    <td>Teknik Informatika</td>
-                                                    {/* <td>HMIF</td> */}
-                                                    <td>13:00</td>
-                                                    <td>15:04</td>
-                                                </tr>
-                                            </tbody>
-                                        </collection>
-
-                                    </div>
-                                    <div id="hal2" class="tab-pane fade">
-
-                                        <collection class="collection collection-bordered collection-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th>Nama</th>
-                                                    <th>NIM</th>
-                                                    <th>Jurusan</th>
-                                                    {/* <th>Himpunan</th> */}
-                                                    <th>Waktu Datang</th>
-                                                    <th>Waktu Pulang</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Royyan Abdullah Dzakiy</td>
-                                                    <td>13515123</td>
-                                                    <td>Teknik Informatika</td>
-                                                    {/* <td>HMIF</td> */}
-                                                    <td>13:00</td>
-                                                    <td>15:04</td>
-                                                </tr>
-                                            </tbody>
-                                        </collection>
-
-                                    </div>
-                                    <div id="hal3" class="tab-pane fade">
-
-                                        <collection class="collection collection-bordered collection-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th>Nama</th>
-                                                    <th>NIM</th>
-                                                    <th>Jurusan</th>
-                                                    {/* <th>Himpunan</th> */}
-                                                    <th>Waktu Datang</th>
-                                                    <th>Waktu Pulang</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Royyan Abdullah Dzakiy</td>
-                                                    <td>13515123</td>
-                                                    <td>Teknik Informatika</td>
-                                                    {/* <td>HMIF</td> */}
-                                                    <td>13:00</td>
-                                                    <td>15:04</td>
-                                                </tr>
-                                            </tbody>
-                                        </collection>
-
-                                    </div>
-                                    <div id="hal4" class="tab-pane fade">
-
-                                        <collection class="collection collection-bordered collection-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th>Kode</th>
-                                                    <th>Jurusan</th>
-                                                    {/* <th>Himpunan</th> */}
-                                                    <th>Check in</th>
-                                                    <th>Check out</th>
-                                                    <th>Total</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>135</td>
-                                                    <td>Teknik Informatika</td>
-                                                    {/* <td>HMIF</td> */}
-                                                    <td>3</td>
-                                                    <td>7</td>
-                                                    <td>10</td>
-                                                </tr>
-                                            </tbody>
-                                        </collection>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal" onClick={this.deleteAll}>Delete All</button>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal" onClick={this.refreshData}>Close</button>
-                                </div>
+                            <div class="row">
+                                <br />
+                                <button class="btn btn-default btn-sm form-data" data-toggle='modal' data-target='#form' onClick={this.refreshData}>View Log</button>
                             </div>
                         </div>
                     </div>
@@ -413,4 +289,4 @@ class Main extends Component {
     }
 }
 
-export default Main;
+export default Presensi;

@@ -6,13 +6,25 @@ body {
 #container {
     text-align: center;
 }
+#body {
+    /* kosong */
+}
+    #body h4 {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1em;
+    }
+    #body #collection {
+        color: red;
+    }
 #header {
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 5.5em;
     color:#383838e0;
     margin-bottom: 50px;
+    margin-top: 10%;
 }
 #kmitb {
+    display: inline-box;
     display: -webkit-inline-box;
 }
